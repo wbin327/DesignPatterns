@@ -1,0 +1,27 @@
+@startuml
+abstract class Pizza{
+    String name;
+    public void prepare();
+    public void bake();
+    public void cut();
+    public void packUp();
+}
+class BananaPizza extends Pizza{
+
+}
+class CheesePizza extends Pizza{
+
+}
+class PizzaStore{
+    PizzaFactory pizzaFactory;
+    public void submitOrder();
+    public string getType();
+}
+class PizzaFactory{
+    public Pizza createPizza();
+}
+PizzaStore o-- PizzaFactory
+PizzaFactory .. Pizza
+PizzaFactory .. CheesePizza
+PizzaFactory .. BananaPizza
+@enduml

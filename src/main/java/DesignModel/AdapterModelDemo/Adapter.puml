@@ -1,0 +1,20 @@
+@startuml
+interface Voltage5{
+    int output();
+}
+class Adapter implements Voltage5{
+    int output();
+}
+class Voltage220{
+    int output();
+}
+class Phone{
+}
+class Client{
+}
+
+Adapter o.. Voltage220
+Phone ..> Voltage5
+Client ..> Phone
+Client ..> Adapter
+@enduml

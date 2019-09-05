@@ -1,0 +1,35 @@
+@startuml
+
+class Product{
+    String basic;
+    String walls;
+    String top;
+    setBasic();
+    setWalls();
+    setTop();
+}
+Abstract Builder{
+    Product product;
+    buildBasic();
+    buildWalls();
+    buildTop();
+    Product getProduct();
+}
+class NormalHouse extends Builder{
+}
+class HighBuilding extends Builder{
+}
+class Director{
+    Builder builder;
+    Director(Builder builder);
+    Product construct();
+}
+class Client{
+
+}
+Client ..> Product
+Client ..> Builder
+Client ..> Director
+Product --* Builder
+Director o-- Builder
+@enduml

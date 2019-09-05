@@ -1,0 +1,14 @@
+@startuml
+class client {
+}
+interface Prototype{
+    clone();
+}
+class Sheep implements Prototype{
+    String name;
+    Int age;
+    String color;
+    clone();
+}
+client ..> Prototype
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+abstract class Pizza{
+    String name;
+    public void prepare();
+    public void bake();
+    public void cut();
+    public void packUp();
+}
+class BeiJinBananaPizza extends Pizza{
+
+}
+class BeiJinCheesePizza extends Pizza{
+
+}
+class LondonBananaPizza extends Pizza{
+
+}
+class LondonCheesePizza extends Pizza{
+
+}
+class PizzaStore{
+    PizzaFactory pizzaFactory;
+    public void submitOrder();
+    public string getRegion();
+    public string getType();
+}
+abstract class PizzaFactory{
+    public abstract Pizza createPizza();
+    public PizzaFactory getPizzaFactory();
+}
+class BeiJinPizzaFactory extends PizzaFactory{
+    public Pizza createPizza();
+}
+class LondonPizzaFactory extends PizzaFactory{
+    public Pizza createPizza();
+}
+PizzaStore o-- PizzaFactory
+BeiJinPizzaFactory ..> BeiJinBananaPizza
+BeiJinPizzaFactory ..> BeiJinCheesePizza
+LondonPizzaFactory ..> LondonBananaPizza
+LondonPizzaFactory ..> LondonCheesePizza
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+
+Interface Interface1{
+        void function1();
+        void function2();
+        void function3();
+        void function4();
+}
+
+abstract class AbstractAdapter implements Interface1{
+    void function1();
+    void function2();
+    void function3();
+    void function4();
+}
+class Client{
+}
+
+Client ..> AbstractAdapter
+@enduml
